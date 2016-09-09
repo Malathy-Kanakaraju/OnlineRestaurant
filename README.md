@@ -16,3 +16,11 @@ Completed modules listed below.
 (4) Admin - Add new product
 
 (5) Admin - View product list
+
+
+#Preview its demo here - 
+
+Customer sign in & sign up - http://myproject.890m.com/OnlineRestaurant/
+
+
+Admin sign in - http://myproject.890m.com/OnlineRestaurant/admin/
