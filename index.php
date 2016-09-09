@@ -36,11 +36,11 @@ if (isset($_POST['signup'])) {
 
         $insertSQL = "INSERT INTO customer (first_name_txt, last_name_txt, email, mobile_txt, password, created_dt, updated_dt) VALUES ('$firstname','$lastname','$email','$mobile','$password',now(), now())";
         $insertRes = mysqli_query($dbConn, $insertSQL);
-            $errorlogmessage = "\n------------".date('m/d/Y h:i:s a', time())."---------------\nMysqli error: ".  mysqli_error($dbConn)." \n While executing ".$insertSQL."\n------------------------";
-            $errorlogmessage .= "result: ".$insertRes;
 
         if ($insertRes) {
             $errorlogmessage .= "result success: ";
+            $_SESSION['customer_id'] = $customer['customer_id'];
+            $_SESSION['customer_name'] = $customer['first_name_txt'];        
             header("Location: home.php");
         } else {
             $errorlogmessage .= "result failure: ";
