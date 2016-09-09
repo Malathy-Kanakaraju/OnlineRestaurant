@@ -1,0 +1,57 @@
+
+------------09/09/2016 08:31:09 am---------------
+Mysqli error:  
+ While executing 
+------------------------Error while inserting into custosdfsdfmers table
+------------09/09/2016 08:33:38 am---------------
+Mysqli error:  
+ While executing 
+------------------------Error while inserting into custosdfsdfmers table
+------------09/09/2016 08:35:23 am---------------
+Mysqli error:  
+ While executing 
+------------------------Error while inserting into custosdfsdfmers table
+------------09/09/2016 08:36:19 am---------------
+Mysqli error:  
+ While executing 
+------------------------Error while inserting into custosdfsdfmers table
+------------09/09/2016 08:36:19 am---------------
+Mysqli error:  
+ While executing 
+------------------------Error while inserting into customers table
+------------09/09/2016 08:36:19 am---------------
+Mysqli error: Table 'foodecomm.customers' doesn't exist 
+ While executing INSERT INTO customers (first_name_txt, last_name_txt, email, mobile_txt, password, created_dt, updated_dt) VALUES ('Myfirst','Mylast','test@test.com','1234567890','test123',now(), now())
+------------------------Error while inserting into customers table
+------------09/09/2016 08:38:18 am---------------
+Mysqli error:  
+ While executing 
+------------------------Error while inserting into custosdfsdfmers table
+------------09/09/2016 08:38:18 am---------------
+Mysqli error:  
+ While executing 
+------------------------Error while inserting into customers table
+------------09/09/2016 08:40:21 am---------------
+Mysqli error: Duplicate entry 'test@test.com' for key 'email' 
+ While executing INSERT INTO customer (first_name_txt, last_name_txt, email, mobile_txt, password, created_dt, updated_dt) VALUES ('Myfirst','Mylast','test@test.com','1234567890','test123',now(), now())
+------------------------Error while inserting into customers table
+------------09/09/2016 10:37:49 am---------------
+Mysqli error:  
+ While executing INSERT INTO customer (first_name_txt, last_name_txt, email, mobile_txt, password, created_dt, updated_dt) VALUES ('Myfirst','Mylast','clerk@test.com','1234567890','test123',now(), now())
+------------------------result: 1result success: 
+------------09/09/2016 11:01:08 am---------------
+Mysqli error:  
+ While executing INSERT INTO customer (first_name_txt, last_name_txt, email, mobile_txt, password, created_dt, updated_dt) VALUES ('m','m','test@test.com','e','1',now(), now())
+------------------------Error while inserting into customers table
+------------------------09/09/2016 01:00:45 pm---------------
+Mysqli error:  
+ While executing 
+------------------------hello
+------------------------09/09/2016 01:01:07 pm---------------
+Mysqli error:  
+ While executing 
+------------------------hello
+------------------------09/09/2016 01:01:07 pm---------------
+Mysqli error:  
+ While executing 
+------------------------h r u
