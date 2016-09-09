@@ -39,8 +39,8 @@ if (isset($_POST['signup'])) {
 
         if ($insertRes) {
             $errorlogmessage .= "result success: ";
-            $_SESSION['customer_id'] = $customer['customer_id'];
-            $_SESSION['customer_name'] = $customer['first_name_txt'];        
+            $_SESSION['customer_id'] = mysqli_insert_id($dbConn);
+            $_SESSION['customer_name'] = $firstname;        
             header("Location: home.php");
         } else {
             $errorlogmessage .= "result failure: ";
