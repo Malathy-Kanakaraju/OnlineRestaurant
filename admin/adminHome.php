@@ -27,20 +27,6 @@ if (!isset($_SESSION['user_id'])) {
         $(document).ready(function() {
             
             
-            $(document).on('click',"td #editItem",function(e) {
-                e.preventDefault();
-                document.getElementById("editItemForm").reset();
-                $("#editItemModal").show();
-
-                $("#itemId").val($(this).closest('tr').find("td:eq(0)").text());
-                $("#itemNameUS_e").val($(this).closest('tr').find("td:eq(1)").text());
-                $("#itemNameUK_e").val($(this).parents('tr').find("td:eq(2)").text());
-                $("#descriptionUS_e").val($(this).parents('tr').find("td:eq(3)").text());
-                $("#descriptionUK_e").val($(this).parents('tr').find("td:eq(4)").text());
-                $("#price_e").val($(this).parents('tr').find("td:eq(5)").text());
-                $('#modalMsg_e').html("");
-            });
-    
             $("#editItemForm").on("submit",function(e) {
                 e.preventDefault();
 
@@ -214,36 +200,61 @@ if (!isset($_SESSION['user_id'])) {
                     </div>
                     <div class="modal-body">
                         <form class="form-horizontal" role="form" id="editItemForm" enctype="multipart/form-data" method="POST">
+                            <input type="hidden" id="product_id" />
                             <div class="form-group">
-                                <label class="control-label col-xs-4" for="itemNameUS_e">Item Name (US)</label>
-                                <div class="col-xs-8"><input id="itemNameUS_e" type="text" class="form-control" name="itemNameUS_e" placeholder="Item name in US" required="required"/></div>
+                                <label class="control-label col-xs-4" for="itemName_e">Item Name</label>
+                                <div class="col-xs-8"><input id="itemName_e" type="text" class="form-control" name="itemName_e" placeholder="Item name" required="required"/></div>
                             </div>
                             <div class="form-group">
-                                <label class="control-label col-xs-4" for="itemNameUK_e">Item Name (UK)</label>
-                                <div class="col-xs-8"><input id="itemNameUK_e" type="text" class="form-control" name="itemNameUK_e" placeholder="Item name in UK" required="required"/></div>
+                                <label class="control-label col-xs-4" for="code_e">SKU code</label>
+                                <div class="col-xs-8"><input id="code_e" type="text" class="form-control" name="code_e" placeholder="SKU code" required="required"/></div>
                             </div>
                             <div class="form-group">
-                                <label class="control-label col-xs-4" for="descriptionUS_e">Item Type (US)</label>
-                                <div class="col-xs-8"><input id="descriptionUS_e" type="text" class="form-control" name="descriptionUS_e" placeholder="Item type in US" required="required"/></div>
+                                <label class="control-label col-xs-4" for="description_e">Description</label>
+                                <div class="col-xs-8"><input id="description_e" type="text" class="form-control" name="description_e" placeholder="Description" required="required"/></div>
                             </div>
                             <div class="form-group">
-                                <label class="control-label col-xs-4" for="descriptionUK_e">Item Type (UK)</label>
-                                <div class="col-xs-8"><input id="descriptionUK_e" type="text" class="form-control" name="descriptionUK_e" placeholder="Item type in UK" required="required"/></div>
-                            </div>
-                            <div class="form-group">    
                                 <label class="control-label col-xs-4" for="price_e">Price</label>
-                                <div class="col-xs-8"><input id="price_e" type="number" class="form-control" step="0.01" name="price_e" required="required"/></div>
+                                <div class="col-xs-8"><input id="price_e" type="number" class="form-control" step="0.01" name="price_e" min="0" required="required"/></div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-xs-4" for="stock_e">Stock (Inventory)</label>
+                                <div class="col-xs-8"><input id="stock_e" type="number" class="form-control" name="stock_e" placeholder="Stock" required="required"/></div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-xs-4" for="date1_e">Available From</label>
+                                <div class="col-xs-8"><input id="date1_e" type="date" class="form-control" name="date1_e" placeholder="Available date" required="required"/></div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-xs-4" for="fileToUpload_e">Upload Image</label>
                                 <div class="col-xs-8"><input type="file" name="fileToUpload_e" id="fileToUpload_e"/></div>
-                                <input id="itemId" name="itemId" type="hidden" />
                             </div>
-                            <div class="form-group">     
-                                <div class="col-xs-offset-4 col-xs-8">
-                                    <input type="submit" class="btn btn-primary btn-primary" name="addNewItem_e" id="editItemModalBtn" value=" Edit ">&nbsp;
+                            <div class="form-group">
+                                <label class="control-label col-xs-4" for="courseType_e">Meal Course Type</label>
+                                <div class="col-xs-8">
+                                    <select name="courseType_e" id="courseType_e" class="form-control" required="required">
+                                        <option value="starter">Starter</option>
+                                        <option value="main_course">Main Course</option>
+                                        <option value="dessert">Dessert</option>
+                                    </select>
                                 </div>
-                            </div><br />
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-xs-4" for="servingTime_e">Serving Time</label>
+                                <div class="col-xs-8">
+                                    <select name="servingTime_e" id="servingTime_e" class="form-control" required="required">
+                                        <option value="breakfast">Breakfast</option>
+                                        <option value="lunch">Lunch</option>
+                                        <option value="dinner">Dinner</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-offset-4 col-xs-8">
+                                    <input type="submit" class="btn btn-primary" name="editItem" id="editItem" value=" Edit ">&nbsp;
+                                </div>
+                            </div>
+                            <br />
                             <div id="modalMsg_e" class="text-error"></div>
                         </form>
                     </div>

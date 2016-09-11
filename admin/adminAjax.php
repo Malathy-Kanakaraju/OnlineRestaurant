@@ -179,7 +179,6 @@ if (isset ($_POST['action'])) {
             $output = array();
             
             if (mysqli_num_rows($productRes) > 0) {
-                $output[0] = 1;
                 while ($product = mysqli_fetch_assoc($productRes)) {
                     
                     if ($product['file_path_txt'] == null) {
@@ -198,7 +197,7 @@ if (isset ($_POST['action'])) {
                             "serving_time"=>$product['serving_time_ind'],
                             "availability"=>$product['available_from_dt'],
                             "image"=>$image,
-                            "action"=>"<button class='btn btn-primary' id='editItem' type='submit'>Edit</button>&nbsp<button class='btn btn-danger' id='deleteItem' type='submit'>Delete</button>"));
+                            "action"=>"<button class='btn btn-primary' id='editItem' type='submit' data-toggle='modal' data-target='#editItemModal'>Edit1</button>&nbsp<button class='btn btn-danger' id='deleteItem' type='submit'>Delete</button>"));
                 }
             } else {
                 $output[0] = 0;
