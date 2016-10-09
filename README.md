@@ -3,7 +3,7 @@ Food-e-Comm - An online restaurant
 
 Objective of this project is to build a basic eCommerce / food ordering web application in PHP with following roles and features.
 
-#Status of this project:  
+#Status of this project:  This project is in progress. 
 
 Completed modules listed below.
 
@@ -17,6 +17,7 @@ Completed modules listed below.
 
 (5) Admin - View product list
 
+Many other modules yet to complete and integrate.
 
 #Preview its demo here - 
 
